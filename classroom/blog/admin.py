@@ -4,9 +4,9 @@ from django.contrib import admin
 from .models import Post
 
 class PostAdmin(admin.ModelAdmin):
-    list_display        = ("name", "description")
-    list_filter         = ("name", "author", "categories")
-    search_fields       = ["name", "description", "author", "categories"]
-    prepopulated_fields = {"name": ("name",)}
+    list_display        = ("title", "description")
+    list_filter         = ("title", "author", "categories")
+    search_fields       = ["title", "description", "author", "categories"]
+    prepopulated_fields = {"title": ("title",)}
 
 admin.site.register(Post, PostAdmin)
