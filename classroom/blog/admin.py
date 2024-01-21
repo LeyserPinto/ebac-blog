@@ -1,12 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Person
+from .models import Post
 
-class PersonAdmin(admin.ModelAdmin):
-    list_display        = ("first_name", "last_name")
-    list_filter         = ("first_name", "last_name")
-    search_fields       = ["first_name", "last_name"]
-    prepopulated_fields = {"last_name": ("last_name",)}
+class PostAdmin(admin.ModelAdmin):
+    list_display        = ("name", "description")
+    list_filter         = ("name", "author", "categories")
+    search_fields       = ["name", "description", "author", "categories"]
+    prepopulated_fields = {"name": ("name",)}
 
-admin.site.register(Person, PersonAdmin)
+admin.site.register(Post, PostAdmin)
